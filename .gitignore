@@ -4,3 +4,4 @@
 
 /.vs
 /MicroRabbit.Domain.Core/obj
+/MicroRabbit.Domain.Core/bin/Debug/net8.0

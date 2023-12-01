@@ -7,3 +7,13 @@
 /MicroRabbit.Domain.Core/bin/Debug/net8.0
 /MicroRabbit.Infra.Bus/obj
 /MicroRabbit.Infra.Bus/bin/Debug/net8.0
+/MicroRabbit.Banking.Api/bin/Debug/net8.0
+/MicroRabbit.Banking.Api/obj
+/MicroRabbit.Banking.Application/bin/Debug/net8.0
+/MicroRabbit.Banking.Application/obj
+/MicroRabbit.Banking.Data/bin/Debug/net8.0
+/MicroRabbit.Banking.Data/obj
+/MicroRabbit.Banking.Domain/bin/Debug/net8.0
+/MicroRabbit.Banking.Domain/obj
+/MicroRabbit.Infra.IoC/bin/Debug/net8.0
+/MicroRabbit.Infra.IoC/obj

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MicroRabbit.Banking.Data.Migrations
 {
     [DbContext(typeof(BankingDbContext))]
-    [Migration("20231201210909_Initial Migration")]
-    partial class InitialMigration
+    [Migration("20231206203825_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -11,14 +11,14 @@ namespace MicroRabbit.Banking.Data.Context
 {
     public class BankingDbContext : DbContext
     {
-        public BankingDbContext(DbContextOptions options) 
+        public BankingDbContext(DbContextOptions options) : base(options)
         {
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server=Andrews-Desktop;Database=BankingDB;Trusted_Connection=true;MultipleActiveResultSets=true");
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=BankingDB;Trusted_Connection=true;MultipleActiveResultSets=true");
+        //}
         public DbSet<Account> Accounts { get; set; }
     }
 }

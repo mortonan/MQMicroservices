@@ -1,7 +1,9 @@
 
+using MediatR;
 using MicroRabbit.Banking.Data.Context;
 using MicroRabbit.Infra.IoC;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +14,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<BankingDbContext>();
+builder.Services.AddDbContext<BankingDbContext>(options => options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=BankingDB;Trusted_Connection=true;MultipleActiveResultSets=true"));
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Banking Microservice", Version = "v1" });
+});
+
+//builder.Services.AddMediatR(typeof(IStartup));
 RegisterServices(builder.Services);
 
 var app = builder.Build();
@@ -21,7 +29,10 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Banking Microservice v1");
+    });
 }
 
 

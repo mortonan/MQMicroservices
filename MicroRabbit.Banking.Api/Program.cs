@@ -1,9 +1,11 @@
 
 using MediatR;
 using MicroRabbit.Banking.Data.Context;
+using MicroRabbit.Banking.Domain.CommandHandlers;
 using MicroRabbit.Infra.IoC;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +22,7 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Banking Microservice", Version = "v1" });
 });
 
-//builder.Services.AddMediatR(typeof(IStartup));
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(TransferCommandHandler).GetTypeInfo().Assembly));
 RegisterServices(builder.Services);
 
 var app = builder.Build();

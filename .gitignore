@@ -17,3 +17,8 @@
 /MicroRabbit.Banking.Domain/obj
 /MicroRabbit.Infra.IoC/bin/Debug/net8.0
 /MicroRabbit.Infra.IoC/obj
+/MicroRabbit.Transfer.Api/obj
+/MicroRabbit.Transfer.Api/appsettings.Development.json
+/MicroRabbit.Transfer.Application/obj
+/MicroRabbit.Transfer.Data/obj
+/MicroRabbit.Transfer.Domain/obj
